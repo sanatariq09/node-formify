@@ -1,45 +1,75 @@
-# Formify
+Formify
 
-A simple Full Stack CRUD application built with **React.js**, **Node.js**, **Express.js**, and **Axios**. It allows users to add, view, edit, and delete user information.
+Formify is a full-stack User Management System built with **React.js, Node.js, Express.js, and MySQL.
 
 ## Features
 
-* Add User
-* View Users
-* Edit User
-* Delete User
-* Form Validation
+* Admin Register & Login
+* JWT Authentication
+* Password Hashing with bcrypt
+* User CRUD Operations
+* MySQL Database Integration
+* Email & Contact Validation
+* Axios API Integration
+* Protected Routes
 * Responsive UI
 
-## Tech Stack
+## Technologies
 
-* React.js
-* Node.js
-* Express.js
-* Axios
+Frontend: React.js, Vite, Axios, Tailwind CSS
+Backend: Node.js, Express.js, JWT, bcryptjs
+Database: MySQL
 
-## Run Project
+## Setup
 
 ### Backend
 
-```bash
+bash
 cd server
 npm install
+npm run migrate
 npm run dev
+
+
+Create a `.env` file inside the `server` folder:
+
+```env
+PORT=5001
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=formify
+JWT_SECRET=your_secret_key
+JWT_EXPIRES_IN=1d
 ```
 
 ### Frontend
 
-```bash
+Open another terminal:
+
+bash
 cd client
 npm install
 npm run dev
+
+
+Frontend normally runs on:
+
+```text
+http://localhost:5173
+```
+
+Backend runs on:
+
+```text
+http://localhost:5001
 ```
 
 ## API
 
-* `GET /api/users`
-* `POST /api/users`
-* `PUT /api/users/:id`
-* `DELETE /api/users/:id`
-
+* POST /api/auth/register` — Register Admin
+* POST /api/auth/login` — Admin Login
+* GET /api/users` — Get Users
+* POST /api/users` — Create User
+* PUT /api/users/:id` — Update User
+* DELETE /api/users/:id` — Delete User
